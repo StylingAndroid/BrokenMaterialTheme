@@ -23,7 +23,7 @@ pipeline {
 
       stage('Report') {
         steps {
-            recordIssues tool: androidLintParser(pattern: '**/reports/**/lint-results.xml', reportEncoding: 'UTF-8')
+            recordIssues tool: androidLintParser(pattern: '**/reports/**/lint-results-debug.xml', reportEncoding: 'UTF-8')
             recordIssues tool: detekt(pattern: '**/reports/**/detekt.xml', reportEncoding: 'UTF-8')
             recordIssues tool: ktLint(pattern: '**/reports/**/ktlint*.xml', reportEncoding: 'UTF-8')
         }
